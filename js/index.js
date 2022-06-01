@@ -943,18 +943,285 @@
 // Вызов функции checkForSpam("Get rid of sPaM emails. Our book in on sale!") возвращает true
 // Вызов функции checkForSpam("[SPAM] How to earn fast money?") возвращает true
 
-function checkForSpam(message) {
-  let result = message.toLowerCase().includes("spam") || message.toLowerCase().includes("sale");
-  // Change code below this line
-console.log(result)
-  // Change code above this line
-  return result;
+// function checkForSpam(message) {
+//   let result = message.toLowerCase().includes("spam") || message.toLowerCase().includes("sale");
+//   // Change code below this line
+// console.log(result)
+//   // Change code above this line
+//   return result;
+// }
+
+// checkForSpam("Latest technology news")
+// checkForSpam("JavaScript weekly newsletter")
+// checkForSpam("Get best sale offers now!")
+// checkForSpam("Amazing SalE, only tonight!")
+// checkForSpam("Trust me, this is not a spam message")
+// checkForSpam("Get rid of sPaM emails. Our book in on sale!")
+// checkForSpam("[SPAM] How to earn fast money?")
+
+
+
+
+//module-2 task1//////////////////////////////////////////////
+
+// Функция checkPassword получает пароль пользователя в параметр password,
+// проверяет его на совпадение с паролем администратора в переменной ADMIN_PASSWORD
+// и возвращает сообщение о результате сравнения.
+// Проведи рефакторинг кода функции checkPassword используя паттерн «ранний возврат»:
+// удали переменную message
+// удали else
+// код должен работать так же, как и до оптимизации
+// Объявлена функция checkPassword(password)
+// Вызов checkPassword("mangohackzor") возвращает "Access denied, wrong password!"
+// Вызов checkPassword("polyhax") возвращает "Access denied, wrong password!"
+// Вызов checkPassword("jqueryismyjam") возвращает "Welcome!"
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+ 
+
+//   if (password === ADMIN_PASSWORD) {
+    
+//     return "Welcome!";
+//   }
+
+//   return "Access denied, wrong password!";
+ 
+// }
+
+//  checkPassword("mangohackzor")
+//  checkPassword("polyhax")
+//  checkPassword("jqueryismyjam")
+
+////task3////////////////////////////////////////////////////////////////////////////
+// Функция checkStorage проверяет возможность оформления заказа и возвращает сообщение о результате.
+// Она принимает два параметра, значения которых будут задаваться во время её вызова.
+// available - доступное количество товаров на складе
+// ordered - количество единиц товара в заказе
+// Проведи рефакторинг кода функции checkStorage используя паттерн «ранний возврат».
+
+// Вызов checkStorage(100, 50) возвращает "The order is accepted, our manager will contact you"
+// Вызов checkStorage(100, 130) возвращает "Your order is too large, not enough goods in stock!"
+// Вызов checkStorage(70, 0) возвращает "Your order is empty!"
+// Вызов checkStorage(200, 20) возвращает "The order is accepted, our manager will contact you"
+// Вызов checkStorage(200, 250) возвращает "Your order is too large, not enough goods in stock!"
+// Вызов checkStorage(150, 0) возвращает "Your order is empty!"
+
+// function checkStorage(available, ordered) {
+//   // Change code below this line
+//   if (ordered === 0) {
+//     return "Your order is empty!";
+//   }
+//   if (ordered > available) {
+//     return "Your order is too large, not enough goods in stock!";
+//   }
+//   return "The order is accepted, our manager will contact you";
+
+//   // Change code above this line
+// }
+
+
+// checkStorage(100, 50)
+// checkStorage(100, 130)
+// checkStorage(70, 0)
+// checkStorage(200, 20)
+// checkStorage(200, 250)
+// checkStorage(150, 0)
+
+
+
+/////////////////////////////////////////////////
+// const fruits = ["apple", "peach", "pear", "banana"];
+
+// // Change code below this line
+// const lastElementIndex = fruits.length-1;
+// const lastElement = fruits[lastElementIndex]
+
+// console.log(lastElementIndex)
+// console.log(lastElement)
+
+////////////////////////////////////////
+
+// Напиши функцию getExtremeElements(array) которая принимает один параметр array -
+//   массив элементов произвольной длины.Функция должна возвращать массив из двух элементов -
+//     первого и последнего элемента параметра array.
+// Объявлена функция getExtremeElements(array)
+// Вызов getExtremeElements([1, 2, 3, 4, 5]) возвращает [1, 5]
+// Вызов getExtremeElements(["Earth", "Mars", "Venus"]) возвращает ["Earth", "Venus"]
+// Вызов getExtremeElements(["apple", "peach", "pear", "banana"]) возвращает ["apple", "banana"]
+
+// function getExtremeElements(array) {
+//   // Change code below this line
+//   const newMass = []
+  
+//   newMass.push(array[0], array[array.length-1])
+//   console.log(newMass)
+
+//   // Change code above this line
+//   return newMass;
+// }
+
+
+//  getExtremeElements([1, 2, 3, 4, 5])
+//  getExtremeElements(["Earth", "Mars", "Venus"])
+//  getExtremeElements(["apple", "peach", "pear", "banana"])
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+// Дополни код функции splitMessage(message, delimeter) так, чтобы она возвращала в переменной words
+// результат разделения строки message по разделителюdelimeter - массив строк.
+// Объявлена функция splitMessage(message, delimeter)
+// Вызов splitMessage("Mango hurries to the train", " ") возвращает ["Mango", "hurries", "to", "the", "train"]
+// Вызов splitMessage("Mango", "") возвращает ["M", "a", "n", "g", "o"]
+// Вызов splitMessage("best_for_week", "_") возвращает ["best", "for", "week"]
+
+// function splitMessage(message, delimeter) {
+//   let words;
+//   // Change code below this line
+//   words = message.split(delimeter)
+//   console.log(words)
+//   // Change code above this line
+//   return words;
+// }
+
+//  splitMessage("Mango hurries to the train", " ")
+//  splitMessage("Mango", "")
+//  splitMessage("best_for_week", "_")
+
+//////////////////////////////////////////////////////////////////////////////////////
+// Сервису гравировки украшений нужна функция, которая бы автоматически считала цену гравировки,
+// в зависимости от количества слов и цены за слово.
+// Объявлена функция calculateEngravingPrice(message, pricePerWord).Эта функция принимает строку,
+// состоящую из слов разделённых только пробелами(параметр message) и цену гравировки одного слова(параметр pricePerWord).
+// Напиши тело функции, чтобы она возвращала общую стоимость гравировки всех слов в строке.
+// Объявлена функция calculateEngravingPrice(message, pricePerWord)
+// Вызов calculateEngravingPrice("JavaScript is in my blood", 10) возвращает 50
+// Вызов calculateEngravingPrice("JavaScript is in my blood", 20) возвращает 100
+// Вызов calculateEngravingPrice("Web-development is creative work", 40) возвращает 160
+// Вызов calculateEngravingPrice("Web-development is creative work", 20) возвращает 80
+
+// function calculateEngravingPrice(message, pricePerWord) {
+//    // Change code below this line
+//   const mass = message.split(" ")
+//   let total = mass.length * pricePerWord
+
+//   console.log(mass.length)
+//   console.log(total)
+
+//   return total;
+//    // Change code above this line
+// }
+
+//  calculateEngravingPrice("JavaScript is in my blood", 10)
+//  calculateEngravingPrice("JavaScript is in my blood", 20)
+//  calculateEngravingPrice("Web-development is creative work", 40)
+//  calculateEngravingPrice("Web-development is creative work", 20)
+
+/////////////////////////////////////////////////////////////////////////
+// Дополни код функции makeStringFromArray(array, delimeter) так, чтобы она возвращала в переменной string результат
+//  соединения элементов массива array c разделителем delimeter - строку.
+// Объявлена функция makeStringFromArray(array, delimeter)
+// Вызов makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ") возвращает "Mango hurries to the train"
+// Вызов makeStringFromArray(["M", "a", "n", "g", "o"], "")) возвращает "Mango"
+// Вызов makeStringFromArray(["top", "picks", "for", "you"], "_") возвращает "top_picks_for_you"
+
+// function makeStringFromArray(array, delimeter) {
+//   let string = array.join(delimeter)
+//   // Change code below this line
+
+
+// console.log(string)
+//   // Change code above this line
+//   return string;
+// }
+
+//  makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ")
+//  makeStringFromArray(["M", "a", "n", "g", "o"], "")
+//  makeStringFromArray(["top", "picks", "for", "you"], "_")
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Напиши функцию slugify(title) которая принимает заголовок статьи, параметр title,
+// и возвращает slug, созданный из этой строки.
+// Значением параметра title будут строки, слова которых разделены только пробелами
+// Все символы slug должны быть в нижнем регистре
+// Все слова slug должна быть разделены тире
+// Объявлена функция slugify(title)
+// Вызов slugify("Arrays for begginers") возвращает "arrays-for-begginers"
+// Вызов slugify("English for developer") возвращает "english-for-developer"
+// Вызов slugify("Ten secrets of JavaScript") возвращает "ten-secrets-of-javascript"
+// Вызов slugify("How to become a JUNIOR developer in TWO WEEKS") возвращает "how-to-become-a-junior-developer-in-two-weeks"
+
+
+// function slugify(title) {
+//   // Change code below this line
+// const slug = title.toLowerCase().split(" ").join("-")
+
+// console.log(slug)
+//   // Change code above this line
+//   return slug;
+// }
+
+
+//  slugify("Arrays for begginers")
+//  slugify("English for developer")
+//  slugify("Ten secrets of JavaScript")
+//  slugify("How to become a JUNIOR developer in TWO WEEKS")
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Дополни код так, чтобы переменные содержали частичные копии исходного массива fruits.
+// firstTwoEls - массив из первых двух элементов
+// nonExtremeEls - массив из всех элементов кроме первого и последнего
+// lastThreeEls - массив из трёх последних элементов
+// Объявлена переменная fruits
+// Значение переменной fruits это массив ["apple", "plum", "pear", "orange", "banana"]
+// Объявлена переменная firstTwoEls
+// Значение переменной firstTwoEls это массив ["apple", "plum"]
+// Объявлена переменная nonExtremeEls
+// Значение переменной nonExtremeEls это массив ["plum", "pear", "orange"]
+// Объявлена переменная lastThreeEls
+// Значение переменной lastThreeEls это массив ["pear", "orange", "banana"]
+// Переменной lastThreeEls присвоена копия части массива fruits после применения метода slice с правильными
+// аргументами
+
+
+// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+
+// // Change code below this line
+// const firstTwoEls = fruits.slice(0, 2);
+// console.log(firstTwoEls)
+// const nonExtremeEls = fruits.slice(1, fruits.length-1);
+// console.log(nonExtremeEls)
+// const lastThreeEls = fruits.slice(-3);
+// console.log(lastThreeEls)
+
+//////////////////////////////////////////////////////////////////////////////////
+// Напиши функцию makeArray(firstArray, secondArray, maxLength) для создания нового массива со всеми элементами
+// двух исходных firstArray и secondArray.Параметр maxLength содержит максимально допустимую длину нового массива.
+// Если количество элементов нового массива больше maxLength, функция должна вернуть копию массива длиной maxLength
+// элементов.В противном случае функция должна вернуть новый массив целиком.
+// Объявлена функция makeArray(firstArray, secondArray, maxLength)
+// Вызов makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3) возвращает ["Mango", "Poly", "Ajax"]
+// Вызов makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)возвращает["Mango", "Poly", "Houston", "Ajax"]
+// Вызов makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3) возвращает ["Mango", "Ajax", "Chelsea"]
+// Вызов makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2) возвращает ["Earth", "Jupiter"]
+// Вызов makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4) возвращает ["Earth", "Jupiter", "Neptune", "Uranus"]
+// Вызов makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) возвращает []
+// Вызов функции makeArray() со случайными массивами и случайным числом возвращает правильный массив
+
+
+function makeArray(firstArray, secondArray, maxLength) {
+    // Change code below this line
+  let mass = firstArray.concat(secondArray);
+  mass = mass.length > maxLength ? mass.slice(0, maxLength) : mass
+  console.log(mass)
+  return mass
 }
 
-checkForSpam("Latest technology news") 
-checkForSpam("JavaScript weekly newsletter")
-checkForSpam("Get best sale offers now!")
-checkForSpam("Amazing SalE, only tonight!")
-checkForSpam("Trust me, this is not a spam message")
-checkForSpam("Get rid of sPaM emails. Our book in on sale!")
-checkForSpam("[SPAM] How to earn fast money?")
+ makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)
+ makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)
+ makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)
+ makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2) 
+ makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4) 
+ makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) 
+// Вызов функции makeArray() со случайными массивами и случайным числом возвращает правильный массив
