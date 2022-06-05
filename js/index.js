@@ -1653,11 +1653,10 @@
 function includes(array, value) {
   // Change code below this line
   for (const element of array) {
-
-    return array.indexOf(element) === value ? true : false;
-    //console.log(bul)
-    // Change code above this line
-  }
+    if (element === value) {
+      return true
+    }
+  }return false
 }
 
 console.log(includes([1, 2, 3, 4, 5], 3) )
