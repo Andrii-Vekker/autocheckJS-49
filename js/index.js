@@ -1650,19 +1650,226 @@
 // Вызов includes() для случайного массива со случайным value возвращает верный boolean
 // В функции includes используется for, return, но не метод массива includes
 
-function includes(array, value) {
+// function includes(array, value) {
+//   // Change code below this line
+//   for (const element of array) {
+//     if (element === value) {
+//       return true
+//     }
+//   }return false
+// }
+
+// console.log(includes([1, 2, 3, 4, 5], 3) )
+//  includes([1, 2, 3, 4, 5], 3) 
+//  includes([1, 2, 3, 4, 5], 17) 
+//  includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter") 
+//  includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus") 
+//  includes(["apple", "plum", "pear", "orange"], "plum") 
+//  includes(["apple", "plum", "pear", "orange"], "kiwi") 
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////
+// module 3
+// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment.
+// ownerName - имя владельца;
+// ownerPhone - телефон владельца;
+// ownerEmail - почта владельца;
+// numberOfTags - количество элементов массива в свойстве tags;
+// firstTag - первый элемент массива в свойстве tags;
+// lastTag - последний элемент массива в свойстве tags.
+// Объявлена переменная apartment с помощью const
+// Значение переменной apartment это объект
+// Объявлена переменная ownerName с помощью const
+// Значение переменной ownerName это строка "Henry"
+// Объявлена переменная ownerPhone с помощью const
+// Значение переменной ownerPhone это "982-126-1588"
+// Объявлена переменная ownerEmail с помощью const
+// Значение переменной ownerEmail это "henry.carter@aptmail.com"
+// Объявлена переменная numberOfTags с помощью const
+// Значение переменной numberOfTags это 3
+// Объявлена переменная firstTag с помощью const
+// Значение переменной firstTag это "premium"
+// Объявлена переменная lastTag с помощью const
+// Значение переменной lastTag это "top"
+
+// const apartment = {
+//   imgUrl: "https://via.placeholder.com/640x480",
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+//   tags: ["premium", "promoted", "top"],
+//   owner: {
+//     name: "Henry",
+//     phone: "982-126-1588",
+//     email: "henry.carter@aptmail.com",
+//   },
+// };
+
+
+// const ownerName = apartment.owner.name;
+// const ownerPhone = apartment.owner.phone;
+// const ownerEmail = apartment.owner.email;
+// const numberOfTags = apartment.tags.length;
+// const firstTag = apartment.tags[0];
+// const lastTag = apartment.tags[apartment.tags.length-1];
+// console.log(lastTag)
+
+
+
+
+// const apartment = {
+//   imgUrl: "https://via.placeholder.com/640x480",
+//   descr: "Spacious apartment in the city center",
+//   rating: 4.7,
+//   price: 5000,
+//   tags: ["premium", "promoted", "top", "trusted"],
+//   owner: {
+//     name: "Henry Sibola",
+//     phone: "982-126-1588",
+//     email: "henry.carter@aptmail.com",
+//   },
+// };
+// apartment.area = 60;
+// apartment.rooms = 3;
+//  apartment.location = {country :"Jamaica"};
+// apartment.location.city = "Kingston"
+// // Change code below this line
+// console.log(apartment)
+
+
+///////////////////////////////вычисляемые свойства//////////////////////////////////////
+// Дополни код объявления объекта credentials так, чтобы в результате у него были два свойства: email и password,
+//   имена которых хранятся в переменных emailInputName и passwordInputName.
+// Значением свойства email должна быть строка "henry.carter@aptmail.com", а значением свойства password -
+//   строка "jqueryismyjam".
+// Объявлена переменная credentials
+// Значение переменной credentials это объект
+// В объекте credentials есть свойство email
+// Значение вложенного свойства email это строка "henry.carter@aptmail.com"
+// В объекте credentials есть свойство password
+// Значение вложенного свойства password это строка "jqueryismyjam"
+
+// const emailInputName = "email";
+// const passwordInputName = "password";
+
+// const credentials = {
+//   // Change code below this line
+//   [emailInputName]: "henry.carter@aptmail.com",
+//   [passwordInputName] : "jqueryismyjam"
+
+//   // Change code above this line
+// };
+// console.log(credentials.email)
+
+////////////////////////////for in////////////////////////////////////////
+// Перебери объект apartment используя цикл for...in и запиши в массив keys все его ключи,
+//   а в массив values все значения его свойств.
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// Объявлена переменная keys
+// Значение переменной keys это массив ["descr", "rating", "price"]
+// Объявлена переменная values
+// Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153]
+
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const keys = [];
+// const values = [];
+// for (const key in apartment) {
+//   keys.push(key)
+//   values.push(apartment[key])
+    
+// }
+// console.log(values)
+// for (const value in apartment) {
+//   values.push(value)
+// }
+// console.log(values)
+
+///////////////////////////////hasOwnProperty for in///////////////////////////
+// Выполни рефакторинг решения предыдущего задания добавив в цикл for...in проверку на собственное свойство.
+// Объявлена переменная advert.
+// Значение переменной advert это объект.
+// Объявлена переменная apartment.
+// Значение переменной apartment это объект.
+// Объявлена переменная keys.
+// Значение переменной keys это массив ["descr", "rating", "price"].
+// Объявлена переменная values.
+// Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153].
+
+// const keys = [];
+// const values = [];
+// const advert = {
+//   service: "apt",
+// };
+// const apartment = Object.create(advert);
+// apartment.descr = "Spacious apartment in the city center";
+// apartment.rating = 4;
+// apartment.price = 2153;
+
+// for (const key in apartment) {
+// if (apartment.hasOwnProperty(key)) {
+//     keys.push(key);
+//   values.push(apartment[key]);
+// }
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// ЗАДАЧА. ПОДСЧЁТ СВОЙСТВ
+// Напиши функцию countProps(object), которая считает и возвращает количество собственных свойств объекта 
+// в параметре object.Используй переменную propCount для хранения количества свойств объекта.
+// Объявлена функция countProps(object)
+// Вызов countProps({}) возвращает 0
+// Вызов countProps({ name: "Mango", age: 2 }) возвращает 2
+// Вызов countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }) возвращает 3
+// Функция подсчитывает только собственные свойства объекта
+
+function countProps(object) {
+  let propCount = 0;
   // Change code below this line
-  for (const element of array) {
-    if (element === value) {
-      return true
+  // propCount = Object.keys(object).length
+  // console.log(propCount)
+  /////////////////////////////////////
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      propCount += 1
     }
-  }return false
+    
+  }
+  console.log(propCount)
+return propCount;
 }
 
-console.log(includes([1, 2, 3, 4, 5], 3) )
- includes([1, 2, 3, 4, 5], 3) 
- includes([1, 2, 3, 4, 5], 17) 
- includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter") 
- includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus") 
- includes(["apple", "plum", "pear", "orange"], "plum") 
- includes(["apple", "plum", "pear", "orange"], "kiwi") 
+countProps({})
+countProps({ name: "Mango", age: 2 }) 
+countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }) 
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Объявлена переменная apartment.
+// Значение переменной apartment это объект.
+// Объявлена переменная keys.
+// Значение переменной keys это массив ["descr", "rating", "price"].
+// Значение переменной keys получено с помощью метода Object.keys().
+// Объявлена переменная values.
+// Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153].
+// Значение переменной values получено с помощью цикла for...of.
+
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const values = [];
+// // Change code below this line
+// const keys = Object.keys(apartment);
+// // console.log(keys)
+// for (const key of keys) {
+  
+//   values.push(apartment[key])
+// }
+// console.log(values)
