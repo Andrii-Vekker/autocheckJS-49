@@ -2448,3 +2448,366 @@
 //  add(74, 11, 62, 46, 12, 36) 
 
 ////////////////////////////////////////////task32 ОПЕРАЦИЯ REST ДЛЯ СБОРА ЧАСТИ АРГУМЕНТОВ ФУНКЦИИ///////////
+// Функция addOverNum() считает сумму всех аргументов.Измени параметры и тело функции addOverNum() так,
+// чтобы она считала сумму только тех аргументов, которые больше чем заданное число.Это число должно быть 
+// первым параметром функции.
+// Объявлена функция addOverNum()
+// Вызов addOverNum(50, 15, 27) возвращает 0
+// Вызов addOverNum(10, 12, 4, 11, 48, 10, 8) возвращает 71
+// Вызов addOverNum(15, 32, 6, 13, 19, 8) возвращает 51
+// Вызов addOverNum(20, 74, 11, 62, 46, 12, 36) возвращает 218
+
+// function addOverNum(...args) {
+//   let total = 0;
+
+//   for (const arg of args) {
+//     //console.log(arg)
+//    if (arg > args[0]) {
+//      total += arg;
+//     }
+//     console.log(total)
+//   }
+
+//   return total;
+  
+// }
+
+//  addOverNum(50, 15, 27)
+//  addOverNum(10, 12, 4, 11, 48, 10, 8) 
+//  addOverNum(15, 32, 6, 13, 19, 8) 
+//  addOverNum(20, 74, 11, 62, 46, 12, 36) 
+
+////////////////////////task33 ЗАДАЧА. МАССИВ СОВПАДЕНИЙ///////////////////////////////////
+// Функция findMatches() принимает произвольное количество аргументов.Первым аргументом всегда будет 
+// массив чисел, а остальные аргументы будут просто числами.
+// Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы,
+// начиная со второго, которые есть в массиве первого аргумента.
+// Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив[1, 2],
+// потому что только они есть в массиве первого аргумента.
+// Объявлена функция findMatches()
+// Вызов findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) возвращает [1, 2]
+// Вызов findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2) возвращает [17, 89, 2]
+// Вызов findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) возвращает [24, 9, 41]
+// Вызов findMatches([63, 11, 8, 29], 4, 7, 16) возвращает []
+
+// function findMatches(a, ...args) {
+//   const matches = []; // Don't change this line
+// for (const arg of args) {
+//   if (a.includes(arg)) {
+//     matches.push(arg)
+//   }
+//   console.log(matches)
+// }return matches
+// }
+
+ 
+
+ //findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)
+//  findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2) 
+//  findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) 
+//  findMatches([63, 11, 8, 29], 4, 7, 16)
+
+///////////////////////////////task34 МЕТОДЫ ОБЪЕКТА//////////////////////////////////////
+// Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с
+// getBooks() и addBook(bookName).
+// Метод removeBook(bookName) будет удалять книгу по имени.Возвращает строку "Deleting book <имя книги>",
+//   где < имя книги > это значение параметра bookName.
+// Метод updateBook(oldName, newName) будет обновлять название книги на новое.Возвращает строку
+// "Updating book <старое имя> to <новое имя>", где < старое имя > и < новое имя > это значения параметров 
+// oldName и newName соотвественно.
+// Объявлена переменная bookShelf
+// Значение переменной bookShelf это объект
+// Значение свойства bookShelf.getBooks это метод объекта
+// Вызов метода bookShelf.getBooks() возвращает строку "Returning all books"
+// Значение свойства bookShelf.addBook это метод объекта
+// Вызов метода bookShelf.addBook("Haze") возвращает строку "Adding book Haze"
+// Значение свойства bookShelf.removeBook это метод объекта
+// Вызов метода bookShelf.removeBook("Red sunset") возвращает строку "Deleting book Red sunset"
+// Значение свойства bookShelf.updateBook это метод объекта
+// Вызов метода bookShelf.updateBook("Sands of dune", "Dune") возвращает строку "Updating book Sands of dune 
+// to Dune"
+
+// const bookShelf = {
+//   // Change code below this line
+  
+//   books: ["The last kingdom", "The guardian of dreams"],
+//   getBooks() {
+//     return "Returning all books";
+//   },
+//   addBook(bookName) {
+//     return `Adding book ${bookName}`;
+//   },
+//   // Change code above this line
+//   removeBook(deleteBook) {
+    
+//     return `Deleting book ${deleteBook}`
+    
+//   },
+//   updateBook (oldName, newName) {
+
+//     return `Updating book ${oldName} to ${newName}`
+//   }
+
+// };
+// console.log(bookShelf.getBooks())
+// console.log( bookShelf.addBook("Haze") )
+// console.log( bookShelf.removeBook("Red sunset") )
+// console.log( bookShelf.updateBook("Sands of dune", "Dune") )
+//  bookShelf.getBooks() 
+//  bookShelf.addBook("Haze") 
+//  bookShelf.removeBook("Red sunset") 
+//  bookShelf.updateBook("Sands of dune", "Dune") 
+
+/////////////////////////////////////////task35 ДОСТУП К СВОЙСТВАМ ОБЪЕКТА В ЕГО МЕТОДАХ////////////////////
+// Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в 
+// свойстве books.Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы 
+// заменить этот элемент
+// Объявлена переменная bookShelf
+// Значение переменной bookShelf это объект
+// Значение свойства bookShelf.updateBook это метод объекта
+// После вызова метода bookShelf.updateBook("Haze", "Dungeon chronicles"), значение свойства books это массив
+// ["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
+// После вызова метода bookShelf.updateBook("The last kingdom", "Dune"), значение свойства books это массив
+// ["Dune", "Haze", "The guardian of dreams"]
+
+// const bookShelf = {
+//   books: ["The last kingdom", "Haze", "The guardian of dreams"],
+//   updateBook(oldName, newName) {
+//     // Change code below this line
+//     const index = this.books.indexOf(oldName);
+//     this.books.splice(index, 1 , newName)
+
+
+//     // Change code above this line
+//     return this.books
+//   }
+  
+// };
+// console.log(bookShelf.updateBook("Haze", "Dungeon chronicles"))
+// console.log(bookShelf.updateBook("The last kingdom", "Dune"))
+//  bookShelf.updateBook("Haze", "Dungeon chronicles")
+//  bookShelf.updateBook("The last kingdom", "Dune")
+
+//////////////////////////////////task36 ЗАДАЧА. ЛАВКА ЗЕЛИЙ «У СТАРОЙ ЖАБЫ»////////////////////////
+// К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря -
+// добавления, удаления, поиска и обновления зелий.Добавь объекту atTheOldToad свойство potions,
+// значением которого сделай пустой массив.
+// Объявлена переменная atTheOldToad
+// Значение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.potions это массив []
+
+// const atTheOldToad = {
+//   potions: []
+ 
+
+// };
+
+//////////////////////////////////task37 ЗАДАЧА. ПОЛУЧАЕМ ВСЕ ЗЕЛЬЯ///////////////////////////////////
+// Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions.
+// Объявлена переменная atTheOldToad
+// Значение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.potions это массив ["Speed potion", "Dragon breath", "Stone skin"]
+// Значение свойства atTheOldToad.getPotions это метод объекта
+// Вызов метода atTheOldToad.getPotions() возвращает ["Speed potion", "Dragon breath", "Stone skin"]
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  
+//   getPotions() {
+//     return this.potions
+//   }
+// };
+
+// atTheOldToad.getPotions()
+
+///////////////////////////task38 ЗАДАЧА: ДОБАВЛЯЕМ НОВОЕ ЗЕЛЬЕ/////////////////////////////////////
+// Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий 
+// в свойстве potions.
+// Объявлена переменная atTheOldToad
+// Значение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.potions это массив ["Speed potion", "Dragon breath", "Stone skin"]
+// Значение свойства atTheOldToad.addPotion это метод объекта
+// После первого вызова метода atTheOldToad.addPotion("Invisibility"), в свойстве potions будет массив
+// ["Speed potion", "Dragon breath", "Stone skin", "Invisibility"]
+// После второго вызова метода atTheOldToad.addPotion("Power potion"), в свойстве potions будет массив
+// ["Speed potion", "Dragon breath", "Stone skin", "Invisibility", "Power potion"]
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   addPotion(potionName) {
+//  this.potions.push(potionName)
+
+//     return this.potions
+//   },
+
+
+// };
+
+// console.log(atTheOldToad.addPotion("Invisibility"))
+// console.log(atTheOldToad.addPotion("Power potion"))
+// atTheOldToad.addPotion("Invisibility")
+// atTheOldToad.addPotion("Power potion")
+
+////////////////////////////////////task 39 ЗАДАЧА. УДАЛЯЕМ ЗЕЛЬЕ////////////////////////////
+// Объявлена переменная atTheOldToad
+// Значение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.potions это массив ["Speed potion", "Dragon breath", "Stone skin"]
+// Значение свойства atTheOldToad.removePotion это метод объекта
+// После первого вызова метода atTheOldToad.removePotion("Dragon breath"), в свойстве potions будет массив
+// ["Speed potion", Stone skin"]
+// После второго вызова метода atTheOldToad.removePotion("Speed potion"), в свойстве potions будет массив
+// ["Stone skin"]
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   removePotion(potionName) {
+//   const index = this.potions.indexOf(potionName)
+//     this.potions.splice(index, 1);
+
+//     return this.potions
+//   },
+// };
+
+// console.log(atTheOldToad.removePotion("Dragon breath"))
+// console.log(atTheOldToad.removePotion("Speed potion"))
+// atTheOldToad.removePotion("Dragon breath")
+// atTheOldToad.removePotion("Speed potion")
+
+//////////////////////////////////////////task 40 ЗАДАЧА: ОБНОВЛЯЕМ ЗЕЛЬЕ////////////////////////////////
+// Дополни метод updatePotionName(oldName, newName) так, чтобы он обновлял название зелья с oldName на newName,
+// в массиве зелий в свойстве potions.
+// Объявлена переменная atTheOldToad
+// Значение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.potions это массив ["Speed potion", "Dragon breath", "Stone skin"]
+// Значение свойства atTheOldToad.updatePotionName это метод объекта
+// После первого вызова метода atTheOldToad.updatePotionName("Dragon breath", "Polymorth"),
+// в свойстве potions будет массив["Speed potion", "Polymorth", "Stone skin"]
+// После второго вызова метода atTheOldToad.updatePotionName("Stone skin", "Invisibility"),
+// в свойстве potions будет массив["Speed potion", "Polymorth", "Invisibility"]
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   updatePotionName(oldName, newName) {
+//     const index = this.potions.indexOf(oldName)
+//     this.potions.splice(index, 1, newName)
+// return this.potions
+//   },
+// };
+
+
+// console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"))
+// console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility"))
+// atTheOldToad.updatePotionName("Dragon breath", "Polymorth");
+// atTheOldToad.updatePotionName("Stone skin", "Invisibility")
+
+////////////////////////////////////////task41 ЗАДАЧА: РАСШИРЯЕМ ИНВЕНТАРЬ//////////////////////////
+// Заказчица хочет чтобы каждое зелье было представлено не только именем, но и ценой, а в будущем может быть и 
+// другими характеристиками.Поэтому теперь в свойстве potions будет храниться массив объектов со следующими
+// свойствами.
+
+// {
+//   name: "Dragon breath",
+//   price: 700
+// }
+// Выполни рефакторинг методов объекта atTheOldToad так, чтобы они работали не с массивом строк, а с массивом
+// объектов.
+// getPotions() - метод для получения всех зелий. Возвращает значение свойства potions.
+// addPotion(newPotion) - добавляет зелье newPotion(уже объект) в массив в свойстве potions, но только если 
+// такого зелья еще нет в инвентаре.В противном случае возвращается строка.
+// removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
+// updatePotionName(oldName, newName) - обновляет свойство name объекта - зелья с названием oldName на newName
+// в массиве potions.Объявлена переменная atTheOldToadЗначение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.getPotions это метод объекта
+// Вызов метода atTheOldToad.getPotions() для исходного объекта возвращает[{ name: "Speed potion", price: 460 }
+// , { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+// Значение свойства atTheOldToad.addPotion это метод объекта.
+// Для исходного объекта после вызова метода atTheOldToad.addPotion({ name: "Invisibility", price: 620 }),
+// в массиве potions последним элементом будет этот объект
+// Для исходного объекта после вызова метода atTheOldToad.addPotion({ name: "Power potion", price: 270 }),
+// в массиве potions последним элементом будет этот объект
+// Если добавляемое зелье уже есть в массиве potions, метод addPotion возвращает строку с текстом из исходного
+// кода
+// Если добавляемое зелье уже есть в массиве potions, метод addPotion не добавляет в него передаваемый обьект
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Для исходного объекта после вызова atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), массив 
+// potions не изменяется
+// Для исходного объекта после вызова atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), массив potions
+//  не изменяется
+// Для исходного объекта вызов atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), возвращает строку
+// "Error! Potion Dragon breath is already in your inventory!"
+// Для исходного объекта вызов atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), возвращает строку
+// "Error! Potion Stone skin is already in your inventory!"
+// Значение свойства atTheOldToad.removePotion это метод объекта
+// Для исходного объекта после вызова метода atTheOldToad.removePotion("Dragon breath"), в свойстве potions будет
+// массив[{ name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 }]
+// Для исходного объекта после вызова метода atTheOldToad.removePotion("Speed potion"), в свойстве potions будет
+// массив[{ name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+// Значение свойства atTheOldToad.updatePotionName это метод объекта
+// Для исходного объекта после вызова метода atTheOldToad.updatePotionName("Dragon breath", "Polymorth"),
+// в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 },
+// { name: "Stone skin", price: 520 }]
+// Для исходного объекта после вызова метода atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"),
+//   в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 },
+// { name: "Invulnerability potion", price: 520 }]
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+  
+    return this.potions;
+  },
+  addPotion(newPotion) {
+  for (const potion of this.potions) {
+    console.log(this.potions)
+    if (potion !== newPotion) {
+      return this.potions.push(newPotion)
+    }
+  }
+
+    this.potions.push(newPotion);
+  },
+  removePotion(potionName) {
+    const potionIndex = this.potions.indexOf(potionName);
+
+    if (potionIndex === -1) {
+      return `Potion ${potionName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1);
+  },
+  updatePotionName(oldName, newName) {
+    const potionIndex = this.potions.indexOf(oldName);
+
+    if (potionIndex === -1) {
+      return `Potion ${oldName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1, newName);
+  },
+  // Change code above this line
+};
+
+atTheOldToad.getPotions()
+atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), //массив potions не изменяется
+atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), //массив potionsне изменяется
+atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), //возвращает строку
+// "Error! Potion Dragon breath is already in your inventory!"
+atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), //возвращает строку
+// "Error! Potion Stone skin is already in your inventory!"
+atTheOldToad.removePotion("Dragon breath"), //в свойстве potions будет
+// массив[{ name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 }]
+atTheOldToad.removePotion("Speed potion") //в свойстве potions будет
+// массив[{ name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+atTheOldToad.updatePotionName("Dragon breath", "Polymorth")
+// в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 },
+// { name: "Stone skin", price: 520 }]
+atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion")
+// в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 },
+// { name: "Invulnerability potion", price: 520 }]
