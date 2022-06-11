@@ -2790,6 +2790,14 @@ removePotion(potionName) {
     return `Potion ${potionName} is not in inventory!`;
   },
   updatePotionName(oldName, newName) {
+  const index = this.potions.indexOf(oldName)
+    for (const potion of this.potions) {
+      //console,log(potion.name)
+      if (index === 1) {
+        return this.potions.splice(index, 1, newName);
+      }
+    }
+    return `Potion ${oldName} is not in inventory!`;
     // const potionIndex = this.potions.indexOf(oldName);
     // if (potionIndex === -1) {
     //   return `Potion ${oldName} is not in inventory!`;
@@ -2797,15 +2805,15 @@ removePotion(potionName) {
     //  return this.potions.splice(potionIndex, 1, newName);
      
 
-    const index = this.potions.indexOf(oldName)
-    this.potions.splice(index, 1, newName)
-    console.log(this.potions)
-return this.potions
+    // const index = this.potions.indexOf(oldName)
+    // this.potions.splice(index, 1, newName)
+    // console.log(this.potions)
+
     
   },
   // Change code above this line
 };
-
+console.log(atTheOldToad.potions)
 console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"))
 //console.log(atTheOldToad.potions)
 
