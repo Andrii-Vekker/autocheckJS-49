@@ -2490,15 +2490,15 @@
 // Вызов findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) возвращает [24, 9, 41]
 // Вызов findMatches([63, 11, 8, 29], 4, 7, 16) возвращает []
 
-function findMatches(a, ...args) {
-  const arr = [...a, ...args]
-  // const matches = []; // Don't change this line
-  for (let i = 0; i < arr.length; i+=1) {
-    const matches = arr.filter(num => num === arr[i])
-    console.log(matches)
+// function findMatches(a, ...args) {
+//   const arr = [...a, ...args]
+//   // const matches = []; // Don't change this line
+//   for (let i = 0; i < arr.length; i+=1) {
+//     const matches = arr.filter(num => num === arr[i])
+//     console.log(matches)
     
     
-  }
+//   }
 // for (const arg of args) {
 //   if (a.includes(arg)) {
 //     matches.push(arg)
@@ -2508,11 +2508,11 @@ function findMatches(a, ...args) {
 //   }
   
   //return matches
-}
+// }
 
  //console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7))
 
-findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)
+//findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)
 //  findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2) 
 //  findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) 
 //  findMatches([63, 11, 8, 29], 4, 7, 16)
@@ -2850,3 +2850,391 @@ findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)
 //atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion")
 // в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 },
 // { name: "Invulnerability potion", price: 520 }]
+
+////////////////////////callback function///////////////////////
+
+// function greet(name) {
+//   console.log(`Добро пожаловать ${name}.`);
+// }
+
+// // Функция высшего порядка
+// function registerGuest(name, callback) {
+//   console.log(`Регистрируем гостя ${name}.`);
+//   callback(name);
+// }
+
+// registerGuest("Манго", greet);
+
+//////////////////////////////////////////////module 4//////////////////////////////////////
+//////////////////////////////////////task1///////////////////////////////////////
+
+// Дополни код так, чтобы в переменной result был результат выполнения функции makePizza,
+// а в переменной pointer была ссылка на функцию makePizza.
+// Объявлена функция makePizza
+// Объявлена переменная result
+// Значение переменной result это строка "Your pizza is being prepared, please wait."
+// Значение переменной result получено с помощью вызова функции
+// Объявлена переменная pointer
+// Значение переменной pointer это ссылка на функцию makePizza
+
+// function makePizza() {
+//   return "Your pizza is being prepared, please wait.";
+// }
+// // Change code below this line
+
+// const result = makePizza();
+// const pointer = makePizza;
+// console.log(result)
+
+/////////////////////////////////////////////////task2///////////////////////////////////
+// Дополни функцию makeMessage так, чтобы она ожидала вторым параметром(параметр callback) колбэк - функцию 
+// и возвращала ее вызов.Функция deliverPizza или makePizza будет передаваться как колбэк и ожидать
+// аргументом имя готовой доставляемой пиццы.
+// Объявлена функция deliverPizza
+// Объявлена функция makePizza
+// Объявлена функция makeMessage
+// Функция makeMessage принимает два параметра, названые согласно задания, pizzaName и callback
+// Вызов makeMessage("Royal Grand", makePizza) возвращает строку "Pizza Royal Grand is being prepared, please 
+// wait..."
+// Вызов makeMessage("Ultracheese", deliverPizza) возвращает строку "Delivering Ultracheese pizza."
+
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// function makeMessage(pizzaName, callback) {
+// return callback(pizzaName)
+// }
+
+
+// console.log(makeMessage("Royal Grand", makePizza))
+//  makeMessage("Royal Grand", makePizza)  
+// console.log(makeMessage("Ultracheese", deliverPizza) )
+//  makeMessage("Ultracheese", deliverPizza) 
+
+///////////////////////////////////////////task3 inline callback/////////////////////////////////////////
+// Дополни второй вызов функции makePizza(pizzaName, callback), передав вторым аргументом инлайн колбэк - функцию
+// eatPizza(pizzaName), которая логирует строку "Eating pizza <имя пиццы>".
+// Объявлена функция makePizza
+// Функция makePizza принимает два параметра
+// Вторым аргументом при вызове makePizza("Ultracheese") передана функция eatPizza с единственным параметром
+// pizzaName
+
+
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// makePizza("Royal Grand", function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}.`);
+// });
+// // Change code below this line
+
+// makePizza("Ultracheese", function eatPizza(pizzaName) {
+//   console.log(`Eating pizza ${pizzaName}`)
+// });
+
+///////////////////////////////task4 НЕСКОЛЬКО КОЛБЭКОВ//////////////////////////////
+// Необходимо написать логику обработки заказа пиццы.Выполни рефакторинг метода order так, чтобы он принимал 
+// вторым и третим параметрами 
+// два колбэка onSuccess и onError.
+// Если в свойстве pizzas нет пиццы с названием из параметра pizzaName, метод order должен возвращать результат 
+// вызова колбэка onError, передавая ему аргументом строку "There is no pizza with a name <имя пиццы> in the 
+// assortment."
+// Если в свойстве pizzas есть пицца с названием из параметра pizzaName, метод order должен возвращать результат 
+// вызова колбэка onSuccess, передавая ему аргументом имя заказанной пиццы.
+// После объявления объекта pizzaPalace мы добавили колбэки и вызовы методов. Пожалуйста ничего там не меняй.
+// Метод order объявляет три параметра
+// Вызов pizzaPalace.order("Smoked", makePizza, onOrderError) возвращает "Your order is accepted. Cooking pizza 
+// Smoked."
+// Вызов pizzaPalace.order("Four meats", makePizza, onOrderError) возвращает "Your order is accepted. Cooking 
+// pizza Four meats."
+// Вызов pizzaPalace.order("Big Mike", makePizza, onOrderError) возвращает "Error! There is no pizza with a 
+// name Big Mike in the assortment."
+// Вызов pizzaPalace.order("Vienna", makePizza, onOrderError) возвращает "Error! There is no pizza with a 
+// name Vienna in the assortment."
+
+
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+   
+//     // if (this.pizzas.includes(pizzaName)) {
+      
+//     //   return onSuccess(pizzaName)  
+//     // } else {
+//     //   return onError(pizzaName)
+//     // }
+//     ////second solution////
+//     return this.pizzas.includes(pizzaName) ? onSuccess(pizzaName) : onError(pizzaName)
+  
+//   },
+
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! There is no pizza with a name
+// ${error} in the assortment.`;
+// }
+
+// // Method calls with callbacks
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError))
+// console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError))
+
+// pizzaPalace.order('Smoked', makePizza, onOrderError);
+// pizzaPalace.order('Four meats', makePizza, onOrderError);
+// pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// pizzaPalace.order('Vienna', makePizza, onOrderError);
+
+
+
+//////////////////////////////exaple/////////////////////////
+// function processCall(recipient, onAvailable, onNotAvailable) {
+//   // Имитируем доступеность абонента случайным числом
+//   const isRecipientAvailable = Math.random() > 0.5;
+
+//   if (!isRecipientAvailable) {
+//     onNotAvailable(recipient);
+//     return;
+//   }
+
+//   onAvailable(recipient);
+// }
+
+// function takeCall(name) {
+//   console.log(`Соединяем с ${name}, ожидайте...`);
+//   // Логика принятия звонка
+// }
+
+// function activateAnsweringMachine(name) {
+//   console.log(`Абонент ${name} недоступен, оставьте сообщение.`);
+//   // Логика активации автоответчика
+// }
+
+// function leaveHoloMessage(name) {
+//   console.log(`Абонент ${name} недоступен, записываем голограмму.`);
+//   // Логика записи голограммы
+// }
+
+// processCall("Mango", takeCall, activateAnsweringMachine);
+// processCall("Poly", takeCall, leaveHoloMessage);
+
+////////////////////////////////////////task5 МЕТОД FOREACH(CALLBACK)//////////////////////////
+// Функция calculateTotalPrice(orderedItems) принимает один параметр orderedItems - массив чисел, и рассчитывает общую сумму его элементов,
+// которая сохраняется в переменной totalPrice и возвращается как результат работы функции.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+// Объявлена функция calculateTotalPrice(orderedItems)
+// Для перебора массива orderedItems использован метод forEach
+// Вызов функции calculateTotalPrice([12, 85, 37, 4]) возвращает 138
+// Вызов функции calculateTotalPrice([164, 48, 291]) возвращает 503
+// Вызов функции calculateTotalPrice([412, 371, 94, 63, 176]) возвращает 1116
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
+
+//   // for (let i = 0; i < orderedItems.length; i += 1) {
+//   //   totalPrice += orderedItems[i];
+//   // }
+//   orderedItems.forEach(number =>  {
+  
+//   return totalPrice += number
+// });
+//   // Change code above this line
+//   return totalPrice;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]))
+//  calculateTotalPrice([12, 85, 37, 4])
+//  calculateTotalPrice([164, 48, 291])
+//  calculateTotalPrice([412, 371, 94, 63, 176]) 
+
+///////////////////////////////////task6 ЗАДАЧА. ФИЛЬТРАЦИЯ МАССИВА ЧИСЕЛ////////////////////////////
+// Функция filterArray(numbers, value) принимает массив чисел numbers и возвращает новый массив, в котором будут только те элементы
+// оригинального массива, которые больше чем значение параметра value.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+// Объявлена функция filterArray(numbers, value)
+// Для перебора массива numbers использован метод forEach
+// Вызов функции filterArray([1, 2, 3, 4, 5], 3) возвращает [4, 5]
+// Вызов функции filterArray([1, 2, 3, 4, 5], 4) возвращает [5]
+// Вызов функции filterArray([1, 2, 3, 4, 5], 5) возвращает []
+// Вызов функции filterArray([12, 24, 8, 41, 76], 38) возвращает [41, 76]
+// Вызов функции filterArray([12, 24, 8, 41, 76], 20) возвращает [24, 41, 76]
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value) {
+//       filteredNumbers.push(numbers[i]);
+//     }
+//   }
+//   numbers.forEach(function(number) {
+//     if (number > value) {
+//       filteredNumbers.push(number)
+//     } 
+//   });
+  
+//   // Change code above this line
+//   console.log(filteredNumbers)
+//   return filteredNumbers;
+// }
+
+//  filterArray([1, 2, 3, 4, 5], 3) 
+//  filterArray([1, 2, 3, 4, 5], 4) 
+//  filterArray([1, 2, 3, 4, 5], 5) 
+//  filterArray([12, 24, 8, 41, 76], 38) 
+//  filterArray([12, 24, 8, 41, 76], 20) 
+
+/////////////////////////////////////task7 ЗАДАЧА. ОБЩИЕ ЭЛЕМЕНТЫ///////////////////////////////////////////
+// Функция getCommonElements(firstArray, secondArray) принимает два массива произвольной длины в параметры firstArray и secondArray,
+// и возвращает новый массив их общих элементов, то есть тех которые есть в обоих массивах.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+// Объявлена функция getCommonElements(firstArray, secondArray)
+// Для перебора параметра (массива) использован метод forEach
+// Вызов getCommonElements([1, 2, 3], [2, 4]) возвращает [2]
+// Вызов getCommonElements([1, 2, 3], [2, 1, 17, 19]) возвращает [1, 2]
+// Вызов getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) возвращает [12, 27, 3]
+// Вызов getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) возвращает [10, 30, 40]
+// Вызов getCommonElements([1, 2, 3], [10, 20, 30]) возвращает []
+// Вызов функции со случайн
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+//   // for (let i = 0; i < firstArray.length; i += 1) {
+//   //   if (secondArray.includes(firstArray[i])) {
+//   //     commonElements.push(firstArray[i]);
+//   //   }
+//   // }
+//   firstArray.forEach(function (number, index) {
+//     if (secondArray.includes(number)) {
+//       commonElements.push(number)
+//     }
+//   });
+
+//   return commonElements;
+//   // Change code above this line
+// }
+
+//  getCommonElements([1, 2, 3], [2, 4])
+//  getCommonElements([1, 2, 3], [2, 1, 17, 19]) 
+//  getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) 
+//  getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) 
+//  getCommonElements([1, 2, 3], [10, 20, 30]) 
+
+///////////////////////////////////////////task 8 СТРЕЛОЧНЫЕ ФУНКЦИИ.///////////////////////////////////////////////
+// Выполни рефакторинг функции calculateTotalPrice() так, чтобы она была объявлена как стрелочная.
+// Объявлена переменная calculateTotalPrice
+// Переменной calculateTotalPrice присвоена стрелочная функция с параметрами (quantity, pricePerItem)
+// Вызов calculateTotalPrice(5, 100) возвращает 500
+// Вызов calculateTotalPrice(8, 60) возвращает 480
+// Вызов calculateTotalPrice(3, 400) возвращает 1200
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// function calculateTotalPrice(quantity, pricePerItem) {
+//   // Change code above this line
+//   return quantity * pricePerItem;
+// }
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   return quantity * pricePerItem
+// }
+
+//  calculateTotalPrice(5, 100)
+//  calculateTotalPrice(8, 60)
+//  calculateTotalPrice(3, 400) 
+
+///////////////////////////////////////////task9 НЕЯВНЫЙ ВОЗВРАТ////////////////////////////////////////////
+// Выполни рефакторинг функции calculateTotalPrice() так, чтобы она использовала неявный возврат.
+// Объявлена переменная calculateTotalPrice
+// Переменной calculateTotalPrice присвоена стрелочная функция с параметрами (quantity, pricePerItem)
+// В функции использован неявный возврат
+// Вызов calculateTotalPrice(5, 100) возвращает 500
+// Вызов calculateTotalPrice(8, 60) возвращает 480
+// Вызов calculateTotalPrice(3, 400) возвращает 1200
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+// Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) =>
+//     quantity * pricePerItem;
+
+// // Change code above this line
+
+//  calculateTotalPrice(5, 100)
+//  calculateTotalPrice(8, 60)
+//  calculateTotalPrice(3, 400) 
+
+///////////////////////////////////////task10 СТРЕЛОЧНЫЕ ФУНКЦИИ КАК КОЛЛБЕКИ////////////////////////////////////////
+// Выполни рефакторинг функции calculateTotalPrice(orderedItems) заменив её объявление на стрелочную функцию. 
+// Замени коллбек - функцию передаваемую в метод forEach() на стрелочную функцию.
+// Объявлена переменная calculateTotalPrice
+// Переменной calculateTotalPrice присвоена стрелочная функция с параметром (orderedItems)
+// Для перебора массива orderedItems использован метод forEach
+// Коллбек для метода forEach это стрелочная функция
+// Вызов функции calculateTotalPrice([12, 85, 37, 4]) возвращает 138
+// Вызов функции calculateTotalPrice([164, 48, 291]) возвращает 503
+// Вызов функции calculateTotalPrice([412, 371, 94, 63, 176]) возвращает 1116
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+// Change code below this line
+// function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
+
+//   orderedItems.forEach(function (item) {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+const calculateTotalPrice = orderedItems.forEach(number => totalPrice +=number)
+
+console.log(calculateTotalPrice)
+ calculateTotalPrice([12, 85, 37, 4])
+ calculateTotalPrice([164, 48, 291])
+ calculateTotalPrice([412, 371, 94, 63, 176]) 
+
+////////////////////////////////////////////////////////////////
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+// function getAllPropValues(propName) {
+//   // Change code below this line
+// const array = [];
+//   for (const product of products) {
+//     //console.log(product)
+//     const keys = Object.keys(product);
+//     const values = Object.values(product);
+//     keys.forEach(function (key, index) {
+//       //console.log(key, index)
+//      console.log("price")
+//     });
+//     // if (keys.includes(propName)) {
+//       //   array.push(keys)
+//       // }
+//     }
+    
+// return array;
+//   // Change code above this line
+// }
+// getAllPropValues("price")
+///////////////////////////////////////////////////////////
