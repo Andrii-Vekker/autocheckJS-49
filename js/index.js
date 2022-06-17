@@ -4561,6 +4561,30 @@ const users = [
 // Вызов функции с указанным массивом пользователей возвращает массив["Adrian Cross", "Aisha Tran", "Briana Decker", "Eddie Strong",
 // "Goldie Gentry", "Jacklyn Lucas", "Jordan Sampson", "Linda Chapman", "Marilyn Mcintosh", "Naomi Buckner", "Padilla Garrison",
 // "Sharron Pace", "Solomon Fokes"]
-const getSortedFriends = users => {
-   return [...users].sort()
+// const getSortedFriends = users => {
+//   return users.flatMap(user => user.friends).filter((unique, i, arr) => arr.indexOf(unique) === i).
+//     sort((firstName, secondName) => firstName.localeCompare(secondName))
+// };
+// console.log(getSortedFriends(users))
+
+////////////////////////////////////task48 ЗАДАЧА. ОБЩИЙ БАЛАНС/////////////////////////////////////////////
+
+// Дополни функцию getTotalBalanceByGender(users, gender) так, чтобы она возвращала общий баланс пользователей(свойство balance),
+// пол которых(свойство gender) совпадает со значением параметра gender.
+// Объявлена переменная getTotalBalanceByGender
+// Переменной getTotalBalanceByGender присвоена стрелочная функция с параметрами (users, gender)
+// В теле функции используется цепочка методов в правильном порядке
+// Значение параметра users не изменяется
+// Если значение параметра gender это строка "male", функция возвращает число 12053
+// Если значение параметра gender это строка "female", функция возвращает число 8863
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+const getTotalBalanceByGender = (users, gender) => {
+  return users.filter(user => user.gender === gender).reduce((total, user) => total + user.balance, 0)
 };
+// return users.reduce((total, user,) => total + user.friends.length, 0);
+console.log(getTotalBalanceByGender(users, "male"))
+// const totalScore = students.reduce((total, student) => {
+//   // return total + student.score;
+// }, 0);
+//  return users.find(user => user.email === email)
