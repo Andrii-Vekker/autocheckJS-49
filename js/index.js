@@ -4579,12 +4579,42 @@ const users = [
 // Если значение параметра gender это строка "female", функция возвращает число 8863
 // Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
 
-const getTotalBalanceByGender = (users, gender) => {
-  return users.filter(user => user.gender === gender).reduce((total, user) => total + user.balance, 0)
-};
+// const getTotalBalanceByGender = (users, gender) => {
+//   return users.filter(user => user.gender === gender).reduce((total, user) => total + user.balance, 0)
+// };
 // return users.reduce((total, user,) => total + user.friends.length, 0);
-console.log(getTotalBalanceByGender(users, "male"))
+// console.log(getTotalBalanceByGender(users, "male"))
 // const totalScore = students.reduce((total, student) => {
 //   // return total + student.score;
 // }, 0);
 //  return users.find(user => user.email === email)
+
+// function reverseString(str) {
+  
+//   return str.split("").reverse().join("");
+// }
+
+
+// console.log(reverseString("hello"))
+///////
+// function largestOfFour(arr) {
+//  // return arr.flatMap((element) => Math.max(...element));
+//   let res = []
+//   for (let i = 0; i < arr.length; i+=1) {
+//     const maxNum = Math.max(...arr[i])
+//     res.push(maxNum)
+    
+//   }
+//   return res
+// }
+
+// console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+//////////////////////////////вернуить буль при совпадении окончания
+function confirmEnding(str, target) {
+  //return str.endsWith(target);
+  console.log(str.slice(-target.length))
+ //return str.slice(-target.length) === target
+  
+}
+
+console.log(confirmEnding("Bastian", "n"));
