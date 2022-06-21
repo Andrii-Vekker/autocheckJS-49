@@ -4467,71 +4467,71 @@
 // console.log(names)
 
 ///////////////////////////////////////////////////task 46 ЗАДАЧА. ПОЛЬЗОВАТЕЛИ И ДРУЗЬЯ/////////////////////////////
-const users = [
-  {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    gender: "male"
-  },
-  {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    gender: "female"
-  },
-  {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    gender: "male"
-  },
-  {
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    gender: "female"
-  },
-  {
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
-    isActive: true,
-    balance: 3951,
-    gender: "male"
-  },
-  {
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
-    isActive: false,
-    balance: 1498,
-    gender: "male"
-  },
-  {
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    gender: "female"
-  }
-];
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female"
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male"
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female"
+//   }
+// ];
 // Дополни функцию getNamesSortedByFriendCount(users) так, чтобы она возвращала массив имён пользователей отсортированный по
 // возрастанию количества их друзей(свойство friends).
 // Объявлена переменная getNamesSortedByFriendCount
@@ -4610,11 +4610,452 @@ const users = [
 
 // console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
 //////////////////////////////вернуить буль при совпадении окончания
-function confirmEnding(str, target) {
-  //return str.endsWith(target);
-  console.log(str.slice(-target.length))
- //return str.slice(-target.length) === target
+// function confirmEnding(str, target) {
+//   //return str.endsWith(target);
+//   console.log(str.slice(-target.length))
+//  //return str.slice(-target.length) === target
   
+// }
+
+// console.log(confirmEnding("Bastian", "n"));
+
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+  // Change code below this line
+  // getPotions() {
+  //   return this.potions;
+  // },
+//   addPotion(newPotion) {
+//     // if (this.potions.includes(newPotion)) {
+//     //   return `Error! Potion ${newPotion} is already in your inventory!`;
+//     // }
+//     // this.potions.push(newPotion);
+//     for (const potion of this.potions) {
+      
+//       if (potion.name === newPotion.name) {
+        
+//         return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//       }
+//     }//return this.potions.push(newPotion)
+//     return {...this.potions, newPotion}
+// },
+// removePotion(potionName) {
+  
+//   for (const potion of this.potions) {
+//     console.log(potion)
+//     const potionIndex = this.potions.indexOf(potion)
+//       console.log(potionIndex)
+//     if (potion.name === potionName) {
+//       //console.log(this.potions.splice(potionIndex, 1))
+//       return this.potions.splice(potionIndex, 1)
+      
+//     }
+//     }
+//     return `Potion ${potionName} is not in inventory!`;
+//   },
+//   // updatePotionName(oldName, newName) {
+//   // //const index = this.potions.indexOf(oldName)
+//   //   for (const potion of this.potions) {
+//   //     //console,log(potion.name)
+//   //     if (potion.name === oldName) {
+//   //       potion.name = newName
+//   //     }
+//   //   }
+//   //   return `Potion ${oldName} is not in inventory!`;
+//   //   // const potionIndex = this.potions.indexOf(oldName);
+//   //   // if (potionIndex === -1) {
+//   //   //   return `Potion ${oldName} is not in inventory!`;
+//   //   // }
+//   //   //  return this.potions.splice(potionIndex, 1, newName);
+     
+
+//   //   // const index = this.potions.indexOf(oldName)
+//   //   // this.potions.splice(index, 1, newName)
+//   //   // console.log(this.potions)
+
+    
+//   // },
+//   // Change code above this line
+// };
+
+//  console.log(atTheOldToad.removePotion("Speed potion"))
+
+/////////////////////////////////////////////////////
+// const map = ["_id", "name", "isActive", "balance"];
+// const users = [
+//   {
+//     "_id": "5d220b10e8265cc978e2586b",
+//     "isActive": true,
+//     "balance": 2853.33,
+//     "age": 20,
+//     "name": "Buckner Osborne",
+//     "gender": "male",
+//     "company": "EMPIRICA",
+//     "email": "bucknerosborne@empirica.com",
+//     "phone": "+1 (850) 411-2997",
+//     "registered": "2018-08-13T04:28:45 -03:00"
+//   },
+//   {
+//     "_id": "5d220b10144ef972f6c2b332",
+//     "isActive": true,
+//     "balance": 1464.63,
+//     "age": 38,
+//     "name": "Rosalie Smith",
+//     "gender": "female",
+//     "company": "KATAKANA",
+//     "email": "rosaliesmith@katakana.com",
+//     "phone": "+1 (943) 463-2496",
+//     "registered": "2016-12-09T05:15:34 -02:00"
+//   },
+//   {
+//     "_id": "5d220b1083a0494655cdecf6",
+//     "isActive": false,
+//     "balance": 2823.39,
+//     "age": 40,
+//     "name": "Estrada Davenport",
+//     "gender": "male",
+//     "company": "EBIDCO",
+//     "email": "estradadavenport@ebidco.com",
+//     "phone": "+1 (890) 461-2088",
+//     "registered": "2016-03-04T03:36:38 -02:00"
+//   }
+// ];
+
+
+// const fn = (keys, arr) => arr.map((el) => Object.fromEntries(Object.entries(el).filter((el) => keys.includes(el[0]))));
+// console.log(fn(map, users))
+////////////////////////////////////////////////////
+// function transformUser(user) {
+//   let newUser = {};
+//   for (const prop of map) {
+//     if (user.hasOwnProperty(prop)) {
+//       newUser[prop] = user[prop]
+//     }
+//   }
+//   return newUser
+// }
+// const res = users.map(transformUser);
+// console.log(res)
+
+////////////////////////////////////////////////////////module 5 this////////////////////////////////////////
+
+// Выполни рефакторинг методов объекта pizzaPalace, расставив отсутствующие this в местах обращения к свойствам и методам объекта.
+// Метод checkPizza объекта pizzaPalace использует this.
+// Метод order объекта pizzaPalace использует this
+// Вызов pizzaPalace.order("Smoked") возвращает строку "Order accepted, preparing «Smoked» pizza"
+// Вызов pizzaPalace.order("Four meats") возвращает строку "Order accepted, preparing «Four meats» pizza"
+// Вызов pizzaPalace.order("Big Mike") возвращает строку "Sorry, there is no pizza named «Big Mike»"
+// Вызов pizzaPalace.order("Viennese") возвращает строку "Sorry, there is no pizza named «Viennese»"
+// const pizzaPalace = {
+//   pizzas: ["Supercheese", "Smoked", "Four meats"],
+//   // Change code below this line
+//   checkPizza(pizzaName) {
+//     return this.pizzas.includes(pizzaName);
+//   },
+//   order(pizzaName) {
+//     const isPizzaAvailable = this.checkPizza(pizzaName);
+
+//     if (!isPizzaAvailable) {
+//       return `Sorry, there is no pizza named «${pizzaName}»`;
+//     }
+
+//     return `Order accepted, preparing «${pizzaName}» pizza`;
+//   },
+//   // Change code above this line
+// };
+//  pizzaPalace.order("Smoked") 
+//  pizzaPalace.order("Four meats")
+//  pizzaPalace.order("Big Mike") 
+//  pizzaPalace.order("Viennese") 
+
+////////////////////////////////////////////task 2 ЗАДАЧА: АККАУНТ ПОЛЬЗОВАТЕЛЯ//////////////////////////////
+// Перед увольнением разработчик сломал исходный код управления аккаунтами пользователей нашего сервиса доставки еды. 
+// Выполни рефакторинг методов объекта customer, расставив отсутствующие this при обращении к свойствам объекта.
+// После объявления объекта мы добавили вызовы методов в той последовательности, в которой твой код будут проверять тесты. 
+// Пожалуйста ничего там не меняй.
+// Объявлена переменная customer
+// Значение переменной customer это объект со свойствами и методами
+// Вызов customer.getDiscount() возвращает текущее значение свойства discount
+// Вызов customer.setDiscount(0.15) обновляет значение свойства discount
+// Вызов customer.getBalance() возвращает текущее значение свойства balance.
+// Вызов customer.getOrders() возвращает текущее значение свойства orders
+// Вызов customer.addOrder(5000, "Steak") добавляет "Steak" в массив значений свойства orders и обновляет баланс
+// Метод getBalance объекта customer использует this
+// Метод getDiscount объекта customer использует this
+// Метод setDiscount объекта customer использует this
+// Метод getOrders объекта customer использует this
+// Метод addOrder объекта customer использует thi
+// const customer = {
+//   username: "Mango",
+//   balance: 24000,
+//   discount: 0.1,
+//   orders: ["Burger", "Pizza", "Salad"],
+//   // Change code below this line
+//   getBalance() {
+//     return this.balance;
+//   },
+//   getDiscount() {
+//     return this.discount;
+//   },
+//   setDiscount(value) {
+//     this.discount = value;
+//   },
+//   getOrders() {
+//     return this.orders;
+//   },
+//   addOrder(cost, order) {
+//     this.balance -= cost - cost * this.discount;
+//     this.orders.push(order);
+//   },
+//   // Change code above this line
+// };
+
+// customer.setDiscount(0.15);
+// console.log(customer.getDiscount()); // 0.15
+// customer.addOrder(5000, "Steak");
+// console.log(customer.getBalance()); // 19750
+// console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+
+
+////////////////////////////////////task 3 ЗАДАЧА: ИСТОРИЯ ЗАКАЗОВ///////////////////////////////////////
+// Тестировщики нашли баги в коде сервиса хранения истории заказов еды.Тебе необходимо исправить их, правильно расставив this 
+// в методах объекта historyService, чтобы методы начали работать правильно.
+// Объявлена переменная historyService
+// Значение переменной historyService это объект с исходными свойствами и методами
+// Вызов historyService.getOrdersLog() возвращает строку с перечислением данных всех заказов из свойства orders
+// Вызов historyService.getEmails() возвращает массив всех уникальных почтовых адресов из свойства orders
+// Вызов historyService.getOrdersByEmail("solomon@topmail.net") возвращает[{ email: "solomon@topmail.net", dish: "Burger" }, {
+// email:
+// "solomon@topmail.net", dish: "Apple pie"
+// }]
+// Вызов historyService.getOrdersByEmail("artemis@coldmail.net") возвращает [{ email: "artemis@coldmail.net", dish: "Pizza" }]
+// Метод getOrdersLog объекта historyService использует this
+// Метод getEmails объекта historyService использует this
+// Метод getOrdersByEmail объекта historyService использует this
+// const historyService = {
+//   orders: [
+//     { email: "jacob@hotmail.com", dish: "Burrito" },
+//     { email: "solomon@topmail.net", dish: "Burger" },
+//     { email: "artemis@coldmail.net", dish: "Pizza" },
+//     { email: "solomon@topmail.net", dish: "Apple pie" },
+//     { email: "jacob@hotmail.com", dish: "Taco" },
+//   ],
+//   // Change code below this line
+//   getOrdersLog() {
+//     return this.orders
+//       .map(order => `email: ${order.email} dish: ${order.dish}`)
+//       .join(" - ");
+//   },
+//   getEmails() {
+//     const emails = this.orders.map(order => order.email);
+//     const uniqueEmails = new Set(emails);
+//     return [...uniqueEmails];
+//   },
+//   getOrdersByEmail(email) {
+//     return this.orders.filter(order => order.email === email);
+//   },
+//   // Change code above this line
+// };
+//  historyService.getOrdersLog() 
+//  historyService.getEmails() 
+//  historyService.getOrdersByEmail("solomon@topmail.net") 
+//  historyService.getOrdersByEmail("artemis@coldmail.net") 
+
+//////////////////////////////////////task 4 ПРОТОТИП ОБЪЕКТА/////////////////////////////////////
+// Измени код так, чтобы объект parent стал прототипом для объекта в переменной сhild.
+// Объявлена переменная parent
+// Значение переменной parent это объект
+// Вызов parent.hasOwnProperty("surname") возвращает true
+// Вызов parent.hasOwnProperty("heritage") возвращает true
+// Объявлена переменная child
+// Значение переменной child это объект
+// Вызов child.hasOwnProperty("name") возвращает true
+// Обращение к child.name возвращает "Jason"
+// Вызов child.hasOwnProperty("age") возвращает true
+// Обращение к child.age возвращает 27
+// Вызов child.hasOwnProperty("surname") возвращает false
+// Обращение к child.surname возвращает "Moore"
+// Вызов child.hasOwnProperty("heritage") возвращает false
+// Обращение к child.heritage возвращает "Irish"
+// Вызов parent.isPrototypeOf(child) возвращает true
+// Используется метод Object.create()
+// const parent = {
+//   name: "Stacey",
+//   surname: "Moore",
+//   age: 54,
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const child = Object.create(parent)
+// // Change code above this line
+// child.name = "Jason";
+// child.age = 27;
+
+//////////////////////////////////task5 ЗАДАЧА: ЦЕПОЧКА ПРОТОТИПОВ/////////////////////////////
+// Измени код, построив цепочку прототипов так, чтобы объект ancestor был прототипом для parent, а тот в свою очередь был прототипом для child.
+// Объявлена переменная ancestor
+// Значение переменной ancestor это объект.
+// Объявлена переменная parent
+// Значение переменной parent это объект.
+// Объявлена переменная child
+// Значение переменной child это объект.
+// Вызов ancestor.isPrototypeOf("parent") возвращает true
+// Вызов parent.isPrototypeOf("child") возвращает true
+// Вызов ancestor.hasOwnProperty("surname") возвращает true
+// Обращение к ancestor.surname возвращает "Dawson"
+// Вызов parent.hasOwnProperty("surname") возвращает true
+// Обращение к parent.surname возвращает "Moore"
+// Вызов child.hasOwnProperty("surname") возвращает false
+// Обращение к child.surname возвращает "Moore"
+// Вызов ancestor.hasOwnProperty("heritage") возвращает true
+// Обращение к ancestor.heritage возвращает "Irish"
+// Вызов parent.hasOwnProperty("heritage") возвращает false
+// Обращение к parent.heritage возвращает "Irish"
+// Вызов child.hasOwnProperty("heritage") возвращает false
+// Обращение к child.heritage возвращает "Irish"
+// Используется метод Object.create()
+// const ancestor = {
+//   name: "Paul",
+//   age: 83,
+//   surname: "Dawson",
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const parent = Object.create(ancestor)
+// parent.name = "Stacey";
+// parent.surname = "Moore";
+// parent.age = 54;
+
+// const child = Object.create(parent)
+// child.name = "Jason";
+// child.age = 27;
+
+// Change code above this line
+
+/////////////////////////////////////////////task 6 ОБЪЯВЛЕНИЕ КЛАССА CONSTRUCTOR///////////////////////////
+// Добавь классу Car метод constructor который принимает три параметра:
+// brand - марка автомобиля.
+// model - модель автомобиля.
+// price - цена автомобиля.
+// Класс Car должен создавать объект с одноимёнными свойствами brand, model и price, значениями которых должны быть переданные 
+// аргументы во время её вызова с оператором new.
+// Объявлен класс Car
+// У класса Car есть метод constructor
+// В результате вызова new Car("Audi", "Q3", 36000) получится объект { brand: "Audi", model: "Q3", price: 36000 }
+// В результате вызова new Car("BMW", "X5", 58900) получится объект { brand: "BMW", model: "X5", price: 58900 }
+// В результате вызова new Car("Nissan","Murano", 31700) получится объект { brand: "Nissan", model: "Murano", price: 31700 }
+// class Car {
+//   constructor(brand, model, price) {
+//     this.brand = brand
+//     this.model = model
+//     this.price = price
+// }
+// };
+
+
+// console.log(new Car("Audi", "Q3", 36000) )
+//  new Car("Audi", "Q3", 36000) 
+//  new Car("BMW", "X5", 58900) 
+//  new Car("Nissan","Murano", 31700) 
+
+/////////////////////////////////////////task 8 ОБЪЕКТ ПАРАМЕТРОВ////////////////////////////
+// Выполни рефакторинг класса Car так, чтобы он принимал один параметр - объект со свойсвами brand, model и price.Деструктуризируй 
+// объект в сигнатуре(подписи) конструктора.
+// Объявлен класс Car
+// У класса Car есть метод constructor
+// В результате вызова new Car({ brand: "Audi", model: "Q3", price: 36000 }) получится объект { brand: "Audi", model: "Q3", price: 36000 }
+// В результате вызова new Car({ brand: "BMW", model: "X5", price: 58900 }) получится объект { brand: "BMW", model: "X5", price: 58900 }
+// В результате вызова new Car({ brand: "Nissan", model: "Murano", price: 31700 }) получится объект {
+//   brand: "Nissan", model: "Murano",
+//   price: 31700
+// }
+// class Car {
+//   // Change code below this line
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+// console.log(new Car({ brand: "Audi", model: "Q3", price: 36000 }))
+
+////////////////////////////////////////////////task 9 МЕТОДЫ КЛАССА////////////////////////////////////////////
+// Добавь классу Car два метода.
+// getPrice() - возвращает значение свойства price из объекта который его будет вызывать.
+// changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice.
+// В классе Car объявлен метод getPrice
+// Метод getPrice возвращает значение свойства price экземпляра класса который его вызывает
+// В классе Car объявлен метод changePrice
+// Метод changePrice изменяет значение свойства price экземпляра класса который его вызывает
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code below this line
+//   getPrice() {
+//   return this.price
+//   };
+//   changePrice(newPrice) {
+//     this.price = newPrice
+//   }
+
+
+//   // Change code above this line
+// }
+
+//////////////////////////////////task 10 ЗАДАЧА: СКЛАД///////////////////////////////////////////////////
+// Напиши класс Storage, который будет создавать объекты для управления складом товаров.Класс ожидает только один аргумент -
+// начальный массив товаров, который записывается на создаваемый объект в свойство items.
+// Объяви следующие методы класса:
+// getItems() - возвращает массив текущих товаров в свойстве items объекта который вызывает этот метод.
+// addItem(newItem) - принимает новый товар newItem и добавляет его в массив товаров в свойстве items объекта который вызывает этот метод.
+// removeItem(itemToRemove) - принимает товар itemToRemove и удаляет его из массива товаров в свойстве items объекта который вызывает этот метод.
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. 
+// Пожалуйста ничего там не меняй.
+// Объявлен класс Storage
+// В классе Storage объявлен метод getItems
+// В классе Storage объявлен метод addItem
+// В классе Storage объявлен метод removeItem
+// Метод getItems возвращает значение свойства items экземпляра класса который его вызывает
+// Метод addItem изменяет свойство items экземпляра класса который его вызывает
+// Метод removeItem изменяет свойство items экземпляра класса который его вызывает
+// В результате вызова new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значение переменной storage это объект
+// У объекта storage есть свойство items
+// Первый вызов storage.getItems(), сразу после инциализации экземпляра, возвращает массив ["Nanitoids", "Prolonger", "Antigravitator"]
+// Второй вызов, storage.getItems(), после вызова storage.addItem("Droid"), возвращает массив["Nanitoids", "Prolonger", "Antigravitator",
+//   "Droid"]
+// Третий вызов storage.getItems(), после вызова storage.removeItem("Prolonger"), возвращает массив ["Nanitoids", "Antigravitator", "Droid"]
+
+class Storage {
+  constructor(items) {
+  this.items = items
+  }
+  getItems() {
+    return this.items
+  };
+  addItem(newItem) {
+    return this.items.push(newItem)
+  };
+  removeItem(removeToItem) {
+    const i = this.items.indexOf(removeToItem)
+    return this.items.splice(i, 1)
+  }
 }
 
-console.log(confirmEnding("Bastian", "n"));
+const storage = new Storage(this.items = items, ["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem("Droid");
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+console.log(new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']))
+console.log(storage.hasOwnProperty(items))
