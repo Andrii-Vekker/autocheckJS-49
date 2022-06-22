@@ -5474,54 +5474,143 @@
 // Вызов mango.isBlacklisted("mango@mail.com") возвращает false
 // Вызов mango.isBlacklisted("poly@mail.com") возвращает true
 
-class User {
-  email;
+// class User {
+//   email;
 
-  constructor(email) {
-    this.email = email;
-  }
+//   constructor(email) {
+//     this.email = email;
+//   }
 
-  get email() {
-    return this.email;
-  }
+//   get email() {
+//     return this.email;
+//   }
 
-  set email(newEmail) {
-    this.email = newEmail;
-  }
-}
-class Admin extends User {
-  // Change code below this line
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   // Change code below this line
 
-  static AccessLevel = {
-    BASIC: "basic",
-    SUPERUSER: "superuser",
-  };
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
 
-  constructor({ email, accessLevel }) {
-    super(email);
-    this.accessLevel = accessLevel;
-    this.blacklistedEmails = []
-  }
+//   constructor({ email, accessLevel }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//     this.blacklistedEmails = []
+//   }
 
-  // Change code above this line
-  blacklist(email) {
-    this.blacklistedEmails.push(email)
-  }
-  isBlacklisted(email) {
-    return this.blacklistedEmails.includes(email)
-  }
-}
+//   // Change code above this line
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email)
+//   }
+//   isBlacklisted(email) {
+//     return this.blacklistedEmails.includes(email)
+//   }
+// }
 
-const mango = new Admin({
-  email: "mango@mail.com",
-  accessLevel: Admin.AccessLevel.SUPERUSER,
-});
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
 
-console.log(mango.email); // "mango@mail.com"
-console.log(mango.accessLevel); // "superuser"
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
 
-mango.blacklist("poly@mail.com");
-console.log(mango.blacklistedEmails); // ["poly@mail.com"]
-console.log(mango.isBlacklisted("mango@mail.com")); // false
-console.log(mango.isBlacklisted("poly@mail.com")); // true
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
 
+///////////////////////////////////////////////////////////////////////////////////////
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ["adipisicing", "irure", "velit"],
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ["non", "amet", "ipsum"],
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ["lorem", "veniam", "culpa"],
+//     gender: "female",
+//     age: 39,
+//   },
+// ];
+// //   const getFriends = users => users.flatMap(user => user.friends).filter((friend, index, array) => array.indexOf(friend) === index);
+// // console.log(getFriends(users));
+// // так не хочет
+// const getFriends = users => users.flatMap(user => user.friends);
+
+//     console.log(getFriends(users));
+//     const uniqueFriends = getFriends(users).filter((friend, index, array) => array.indexOf(friend) === index); 
+
+// console.log(uniqueFriends)
