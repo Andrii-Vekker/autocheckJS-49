@@ -5614,3 +5614,53 @@
 //     const uniqueFriends = getFriends(users).filter((friend, index, array) => array.indexOf(friend) === index); 
 
 // console.log(uniqueFriends)
+
+
+//////////////////////////////////отсортировать по возрастанию,если нет цифр вернуть пустую строку
+// "is2 Thi1s T4est 3a"  -- > "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -- > ""
+// const str = "4of Fo1r pe6ople g3ood th5e the2"
+// const arr = str.split(" ")
+// console.log(arr.sort((a, b) => a.match(/\d+/) - b.match(/\d+/)))
+/////////////////////////////////////////////вывести цивры///////////////////////////////////////////////
+// function filter_list(l) {
+//   // Return a new array with the strings filtered out
+//   return l.filter(n => typeof n === "number")
+// }
+// console.log(filter_list([1, 2, 'a', 'b']))
+// console.log(filter_list([1, 'a', 'b', 0, 15]))
+// console.log(filter_list([1,2,'aasf','1','123',123]))
+
+////////////////////////////////
+
+
+// function alphabetPosition(text) {
+//  const alph = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]; 
+//   const textSplit = text.toLowerCase().split("")
+//   let num = []
+//   for (let i = 0; i < textSplit.length; i += 1) {
+//     const letterIndex = alph.indexOf(textSplit[i]) + 1
+//     if (letterIndex !== 0) {
+//       num.push(letterIndex)
+//     }
+//   }
+//   return num.join(" ")
+// }
+
+// //console.log(num)
+// alphabetPosition("The sunset sets at twelve o' clock.")
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."))
+
+/////////////////////////////////////second///////////////
+// function alphabetPosition(text) {
+//   const newStr = text.toUpperCase().replace(/[^a-zа-яё]/gi, "").split("").join("")
+  
+//   let total = [];
+//   for (let i = 0; i < newStr.length; i += 1) {
+//     const num = newStr.charCodeAt(i) - 64;
+// total.push(num)
+// }
+// return total.join(" ")
+// }
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."))
