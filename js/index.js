@@ -5664,3 +5664,39 @@
 // return total.join(" ")
 // }
 // console.log(alphabetPosition("The sunset sets at twelve o' clock."))
+
+///////////////////////CLOSURES///////////////////////////////////////////
+// const makeShef = function (name) {
+//   const makeDish = function (dish) {
+//     console.log(`${name} готовит ${dish}`)
+//   }
+//   return makeDish
+// }
+// const mango = makeShef("Mango")
+
+// mango("котлеты")
+// mango("пирожок")
+////////////////////////////////////Округлятор/////////////////////////////
+// const floatingPoint = 3.5443
+// const someInt = Math.round(floatingPoint)
+// const withDecimals = Number(floatingPoint.toFixed(2))
+
+// const rounder = function (number, place) {
+//   return Number(number.toFixed(place))
+// };
+
+// console.log(rounder(3.12432))
+// console.log(rounder(3.145432))
+// console.log(rounder(3.1243342))
+
+/////////////////////////////////////with clousers/////////////////
+const rounder = function (places) {
+  return function (number) {
+    return Number(number.toFixed(places))
+  }
+}
+const rounder1 = rounder(2)
+const rounder2 = rounder(3)
+
+
+console.log(rounder1(3.343))
